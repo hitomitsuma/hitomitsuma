@@ -1,0 +1,55 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: hitobito
+email: support@hitobito.com
+description: "hitobito ist eine Mitgliederverwaltung für grosse Verbände und Organisation. Open Source!"
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://hitobito.com" # the base hostname & protocol for your site
+
+permalink: /blog/:categories/:year/:month/:title.html
+
+# Build settings
+# markdown: redcarpet
+
+plugins:
+- jekyll-compass
+
+collections:
+  authors:
+    output: false
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  -
+    scope:
+      path: ""
+    values:
+      layout: 'default'
+
+redcarpet:
+  extensions: [with_toc_data]
+
+wikiToJekyll:
+  user_name: rolandstuder
+  repository_name: 'hitobito'
+  # deploy_remote: "origin"
+  # deploy_branch: "gh-pages"
+  wiki_repository_url: https://github.com/hitobito/hitobito.wiki.git
+  # wiki submodule folder
+  # the underscore makes sure that this folder is ignored by Jekyll
+  wiki_source: "_wiki"
+  # wiki Jekyll generated pages destination folder
+  wiki_dest: "docs"
+  # commit and push to Jekyll repository after wiki synchronisation
+  commit_and_push: false
